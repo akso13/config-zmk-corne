@@ -1,4 +1,4 @@
-j## bluetooth対応ロータリーエンコーダ付きcorne
+## bluetooth対応ロータリーエンコーダ付きcorne
 - フォームウェアにZMKを使用
 - 5個のbluetooth接続プロファイルを保持
 - 有線接続にも対応。
