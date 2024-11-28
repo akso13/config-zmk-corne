@@ -1,6 +1,8 @@
 #include <behaviors.dtsi>
 #include <dt-bindings/zmk/bt.h>
 #include <dt-bindings/zmk/keys.h>
+#include <dt-bindings/zmk/keys.h>
+#include <dt-bindings/zmk/mouse.h>
 
 &mt { flavor = "tap-preferred"; };
 
@@ -92,10 +94,10 @@
             //                    | GUI |     | SPC |                    | ENT |     | ALT |
 
             bindings = <
-&trans  &kp N1    &kp N2     &kp N3        &kp N4     &kp N5                        &kp N6    &kp N7    &kp N8    &kp N9        &kp N0     &trans
-&trans  &kp PLUS  &kp MINUS  &kp ASTERISK  &kp SLASH  &kp EQUAL                     &kp HOME  &kp LEFT  &kp DOWN  &kp UP_ARROW  &kp RIGHT  &kp END
-&trans  &kp F1    &kp F2     &kp F3        &kp F4     &kp F5     &kp K_MUTE  &none  &kp F6    &kp F7    &kp F8    &kp F9        &kp F10    &kp F11
-                             &trans        &trans     &trans                        &trans    &trans    &trans
+&trans      &kp PAGE_UP       &kp HOME            &kp N3          &kp END          &kp LC(HOME)                        &kp PAGE_UP    &kp LC(LEFT_ARROW)  &kp LS(TAB)  &kp LC(RIGHT)  &kp N0           &trans
+&kp LCTRL   &kp LS(LC(HOME))  &kp LC(LEFT_ARROW)  &kp UP_ARROW    &kp LC(RIGHT)    &kp LC(LS(END))                     &kp PAGE_DOWN  &mkp MB1            &mkp MB1     &mkp MB2       &kp RIGHT_SHIFT  &kp RCTRL
+&kp LSHIFT  &kp PAGE_DOWN     &kp LEFT_ARROW      &kp DOWN_ARROW  &kp RIGHT_ARROW  &kp LC(END)      &kp K_MUTE  &none  &kp HOME       &kp LEFT_ARROW      &kp LG(TAB)  &kp RIGHT      &kp RIGHT_ALT    &kp RIGHT_SHIFT
+                                                  &kp LC(X)       &kp LC(C)        &kp LC(V)                           &kp LC(Z)      &kp LC(Y)           &trans
             >;
 
             sensor-bindings =
@@ -111,10 +113,10 @@
             //                    | GUI |     | SPC |                    | ENT |     | ALT |
 
             bindings = <
-&trans         &kp EXCL          &kp AT          &kp HASH          &kp DLLR              &kp PRCNT                              &kp CARET          &kp AMPS               &kp UNDER             &kp PLUS                  &kp ASTERISK      &kp EQUAL
-&kp LESS_THAN  &kp SINGLE_QUOTE  &kp LEFT_BRACE  &kp LEFT_BRACKET  &kp LEFT_PARENTHESIS  &kp DOUBLE_QUOTES                      &kp DOUBLE_QUOTES  &kp RIGHT_PARENTHESIS  &kp RIGHT_BRACKET     &kp RIGHT_BRACE           &kp SINGLE_QUOTE  &kp GREATER_THAN
-&bt BT_CLR     &bt BT_SEL 0      &bt BT_SEL 1    &bt BT_SEL 2      &bt BT_SEL 3          &bt BT_SEL 4       &none  &bootloader  &kp PRINTSCREEN    &kp PAUSE_BREAK        &kp C_AL_TEXT_EDITOR  &kp C_AL_GRAPHICS_EDITOR  &kp PIPE          &kp TILDE
-                                                 &trans            &trans                &trans                                 &trans             &trans                 &trans
+&kt LESS_THAN                    &kp GREATER_THAN  &kp NUMBER_7  &kp NUMBER_8  &kp NUMBER_9  &kp RC(MINUS)                       &kp HASH       &kp LEFT_BRACE        &kp RIGHT_BRACE        &kp SQT            &kp DOLLAR    &kp TILDE
+&mt SLASH LCTRL                  &kp PERCENT       &kp NUMBER_4  &kp NUMBER_5  &kp NUMBER_6  &kp PLUS                            &kp AT_SIGN    &kp LEFT_PARENTHESIS  &kp RIGHT_PARENTHESIS  &kp DOUBLE_QUOTES  &kp COLON     &kp SEMICOLON
+&mt LEFT_SHIFT NON_US_BACKSLASH  &kp ASTERISK      &kp NUMBER_1  &kp NUMBER_2  &kp NUMBER_3  &kp EQUAL       &none  &bootloader  &kp AMPERSAND  &kp LEFT_BRACKET      &kp RIGHT_BRACKET      &kp EXCLAMATION    &kp QUESTION  &kp PIPE
+                                                                 &kt F10       &kt NUMBER_0  &kt UNDERSCORE                      &kt CARET      &trans                &trans
             >;
 
             sensor-bindings =
@@ -124,10 +126,10 @@
 
         layer_3 {
             bindings = <
-&trans  &trans  &trans  &trans  &trans  &trans                  &trans  &kp N7  &kp N8   &kp N9  &kp KP_MINUS  &kp SLASH
-&trans  &trans  &trans  &trans  &trans  &trans                  &trans  &kp N4  &kp N5   &kp N6  &kp PLUS      &kp ASTERISK
-&trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &kp N1  &kp N2   &kp N3  &kp ENTER     &kp EQUAL
-                        &trans  &trans  &trans                  &trans  &kp N0  &kp DOT
+&trans  &trans  &trans  &kp LS(LG(M))  &trans  &trans                  &trans  &kp LS(LG(LEFT))    &kp LG(M)           &kp LS(LG(RIGHT))    &kp KP_MINUS  &kp SLASH
+&trans  &trans  &trans  &trans         &trans  &trans                  &trans  &kp LC(PAGE_UP)     &kp LG(UP_ARROW)    &kp LC(PAGE_DOWN)    &kp PLUS      &kp ASTERISK
+&trans  &trans  &trans  &trans         &trans  &trans  &trans  &trans  &trans  &kp LG(LEFT_ARROW)  &kp LG(DOWN_ARROW)  &kp LG(RIGHT_ARROW)  &kp ENTER     &kp EQUAL
+                        &trans         &trans  &trans                  &trans  &kp N0              &kp DOT
             >;
         };
 
